@@ -9,7 +9,7 @@ export default function Home() {
           {" "}
           {/* Reduced padding from py-8 to py-6 */}
           {/* Card Header */}
-          <div className="border-b border-gray-200 pb-3 px-4">
+          <div className="border-b border-gray-200 pb-3 px-4 mb-2">
             <h2 className="text-2xl font-semibold text-gray-800 m-0">
               Projects By Owino
             </h2>
@@ -18,13 +18,13 @@ export default function Home() {
             {projects?.map((project) => (
               <div
                 key={project.id}
-                className="mb-4 border-b border-gray-200 py-4 flex flex-col items-start"
+                className="mb-4 border-b border-gray-200 flex flex-col items-start pb-6"
               >
                 <div className="px-4">
                   <Link
                     href={project.link}
                     target="_blank"
-                    className="text-lg font-medium text-gray-800 m-0"
+                    className="text-lg font-medium  m-0 text-blue-600 underline"
                   >
                     {project.title}
                   </Link>
