@@ -1,4 +1,5 @@
 import { projects } from "@/data/projects";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -20,9 +21,25 @@ export default function Home() {
                 className="mb-4 border-b border-gray-200 py-4 flex flex-col items-start"
               >
                 <div className="px-4">
-                  <h3 className="text-lg font-medium text-gray-800 m-0">
-                    {project.title}
-                  </h3>
+                  <div className="flex flex-row items-center justify-between mb-2 w-full">
+                    <Link href={project.link} target="_blank" className="text-lg font-medium text-gray-800 m-0">
+                      {project.title}
+                    </Link>
+
+                    <div>
+                      {/* Status Tag */}
+                      <span
+                        className={`px-3 py-1 text-xs font-semibold text-white rounded-full ${
+                          project.status === "In Progress"
+                            ? "bg-blue-500"
+                            : "bg-green-500"
+                        }`}
+                      >
+                        {project.status}
+                      </span>
+                    </div>
+                  </div>
+
                   <p className="mt-2 leading-relaxed text-gray-600">
                     {project.description}
                   </p>
@@ -41,6 +58,17 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+          {/* General Footer */}
+          <div className=" pt-4 px-4">
+            <p className="text-gray-700 text-sm text-center">
+              Dalienst Owino Oduor <br />
+              <Link href="mailto:oduordalienst@gmail.com">
+                oduordalienst@gmail.com
+              </Link>{" "}
+              <br />
+              <Link href="https://www.dalienst.co.ke/" className="text-blue-600">www.dalienst.co.ke</Link>
+            </p>
           </div>
         </div>
       </div>
