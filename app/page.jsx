@@ -21,24 +21,13 @@ export default function Home() {
                 className="mb-4 border-b border-gray-200 py-4 flex flex-col items-start"
               >
                 <div className="px-4">
-                  <div className="flex flex-row items-center justify-between mb-2 w-full">
-                    <Link href={project.link} target="_blank" className="text-lg font-medium text-gray-800 m-0">
-                      {project.title}
-                    </Link>
-
-                    <div>
-                      {/* Status Tag */}
-                      <span
-                        className={`px-3 py-1 text-xs font-semibold text-white rounded-full ${
-                          project.status === "In Progress"
-                            ? "bg-blue-500"
-                            : "bg-green-500"
-                        }`}
-                      >
-                        {project.status}
-                      </span>
-                    </div>
-                  </div>
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    className="text-lg font-medium text-gray-800 m-0"
+                  >
+                    {project.title}
+                  </Link>
 
                   <p className="mt-2 leading-relaxed text-gray-600">
                     {project.description}
@@ -54,6 +43,15 @@ export default function Home() {
                         {stack}
                       </span>
                     ))}
+                    <span
+                      className={`px-3 py-1 text-xs font-semibold text-white rounded-full ${
+                        project.status === "In Progress"
+                          ? "bg-blue-500"
+                          : "bg-green-500"
+                      }`}
+                    >
+                      {project.status}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -67,7 +65,12 @@ export default function Home() {
                 oduordalienst@gmail.com
               </Link>{" "}
               <br />
-              <Link href="https://www.dalienst.co.ke/" className="text-blue-600">www.dalienst.co.ke</Link>
+              <Link
+                href="https://www.dalienst.co.ke/"
+                className="text-blue-600"
+              >
+                www.dalienst.co.ke
+              </Link>
             </p>
           </div>
         </div>
